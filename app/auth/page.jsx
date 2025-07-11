@@ -9,22 +9,22 @@ import React from "react";
 const Login = () => {
   // Use this Function for Login With Google with Supabase
 
-  const signInWithGoogle = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-    });
+  // const signInWithGoogle = async () => {
+  //   const { error } = await supabase.auth.signInWithOAuth({
+  //     provider: "google",
+  //   });
 
-    if(error) {
-      console.error("Error:" , error.message)
-    }
-  };
+  //   if(error) {
+  //     console.error("Error:" , error.message)
+  //   }
+  // };
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="flex flex-col items-center border rounded-2xl p-8">
         <Image
           src={HiringMineLogo}
-          width={200}
-          height={100}
+          width={120}
+          height={50}
           alt="Logo"
           className="w-[200px]  mb-3 "
         />
@@ -43,7 +43,7 @@ const Login = () => {
             Sign In with Google Authentication
           </p>
           <Button className="mt-7 w-full"
-          onClick={signInWithGoogle}
+          // onClick={signInWithGoogle}
           >Login with Google </Button>
         </div>
       </div>
@@ -52,3 +52,30 @@ const Login = () => {
 };
 
 export default Login;
+
+
+
+
+// "use client";
+
+// import { signIn, signOut, useSession } from "next-auth/react";
+// import { Button } from "@/components/ui/button";
+
+// export default function GoogleLoginBtn() {
+//   const { data: session } = useSession();
+
+//   if (session) {
+//     return (
+//       <div>
+//         <p>Welcome, {session.user.name}</p>
+//         <Button onClick={() => signOut()}>Logout</Button>
+//       </div>
+//     );
+//   }
+
+//   return (
+//     <Button onClick={() => signIn("google")}>
+//       Login with Google
+//     </Button>
+//   );
+// }

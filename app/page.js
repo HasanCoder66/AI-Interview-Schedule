@@ -6,7 +6,7 @@ export default function Home() {
     <div>
       Hasan Ashraf
 
-      {/* <Button>Watch Now!</Button> */}
+      <Button>Watch Now!</Button>
     </div>
   );
 }
